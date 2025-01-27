@@ -21,11 +21,14 @@ add_action('init', 'mon_theme_register_menus');
 function mon_theme_supports() {
     // Ajouter la prise en charge des images mises en avant
     add_theme_support( 'post-thumbnails' );
-
     // Ajouter la prise en charge du logo personnalisé
     add_theme_support( 'custom-logo');
-
     // Ajouter automatiquement le titre du site dans l'en-tête du site
     add_theme_support( 'title-tag' );
+    add_theme_support( 'templates' );
 }
 add_action( 'after_setup_theme', 'mon_theme_supports' );
+
+require_once get_template_directory() . '/includes/register_cpt.php';
+
+require_once get_template_directory() . '/includes/acf_fields.php';
