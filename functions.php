@@ -33,3 +33,5 @@ add_action( 'after_setup_theme', 'mon_theme_supports' );
 require_once get_template_directory() . '/includes/register_cpt.php';
 
 require_once get_template_directory() . '/includes/acf_fields.php';
+
+require_once get_template_directory() . '/includes/custom_footer_socials.php';
