@@ -1,0 +1,115 @@
+.post{
+    &_infos{
+        max-width: 80vw;
+        margin: auto;
+        & h1 {
+            text-align: center;
+        }
+    }
+    &_description {
+        @include flex-center(flex, row, space-between,unset);
+        @media (max-width : $tablette) {
+            @include flex-center(flex,column, space-between,center);
+        }
+    }
+    &_image {
+        height: auto;
+        max-width: 55%;
+        @media (max-width : $tablette) {
+            max-width: 100%;
+            display: flex;
+        }
+        @media (max-width : $mobile) {
+            flex-direction: column;
+        }
+        & img {
+            max-width: 100%;
+            height: auto;
+            @media (max-width : $tablette) {
+                max-width: 50%;
+            }
+            @media (max-width : $mobile) {
+                max-width: 100%;
+            }
+        }
+    }
+    &_field {
+        width: 40%;
+        @media (max-width : $tablette) {
+            width: 100%;
+        }
+        & h2 {
+            @media (max-width : $tablette) {
+                text-align: center;
+            }
+        }
+        &-p {
+            border-radius: 8px;
+            margin: 2rem 0;
+            background-color: lightgray;
+        }
+    }
+    &_link {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.toggle{
+    &-content {
+        transform: scaleY(0);
+        transform-origin: top;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: content-box;
+        transition: all 0.5s ease-out;
+        &.open {
+            padding: 1rem;
+            transform: scaleY(1);
+        }
+    }
+    &-title {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $gold-color;
+        border-radius: 8px;
+        margin: 0;
+        padding: 2%;
+        & i {
+            transition: transform 0.3s ease-out;
+        }
+        &.open {
+            & i {
+                transform: rotate(180deg);
+            }
+            & + .toggle-content {
+                height: auto;
+            }
+        }
+    }
+}
+
+.btn-link {
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    border: none;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 100px;
+    font-weight: 800;
+    place-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.825rem;
+    line-height: 1rem;
+    background-color: $green-light-color;
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: $gold-color;
+      transform: translate(0, -0.25rem);
+      background-color: $green-dark-color;
+    }
+  }
