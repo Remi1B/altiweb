@@ -22,7 +22,7 @@ function cptui_register_my_cpts() {
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
 		"rest_namespace" => "wp/v2",
-		"has_archive" => false,
+		"has_archive" => "projet",
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
@@ -39,6 +39,12 @@ function cptui_register_my_cpts() {
 
 	register_post_type( "projet", $args );
 }
+
+add_action( 'init', 'cptui_register_my_cpts' );
+
+
+add_action( 'init', 'cptui_register_my_cpts' );
+
 
 add_action( 'init', 'cptui_register_my_cpts' );
 add_filter('single_template', function($single_template) {
