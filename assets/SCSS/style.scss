@@ -1,4 +1,10 @@
 @import 'variables';
 @import 'mixins';
+@import 'fonts';
 @import 'header';
 @import 'footer';
+@import 'single-projet';
+
+body {
+    overflow-x: hidden;
+}

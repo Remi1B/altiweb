@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeButton = document.querySelector('.mobile_menu-close');
     const mobileNav = document.querySelector('.mobile_nav');
     const menuLinks = document.querySelectorAll('.mobile_nav a');
+    const menuList = document.querySelector('.mobile_nav ul');
 
     function checkWindowSize() {
         const windowWidth = document.documentElement.clientWidth;
-        // Si la largeur de la fenêtre est inférieure ou égale à 576px ( $mobile dans _variables.scss)
         if (windowWidth <= 576) {
             mobileNav.classList.remove('open');
             openButton.classList.add("visible");
@@ -14,15 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             openButton.classList.remove("visible");
             closeButton.classList.remove("visible");
+            mobileNav.classList.remove('open');
         }
     }
 
-    // Vérifier la taille de la fenêtre au chargement de la page
     checkWindowSize();
-
     window.addEventListener('resize', checkWindowSize);
 
-    openButton.addEventListener('click', function () {
+    openButton.addEventListener('click', function (event) {
+        if (document.documentElement.clientWidth > 576) return; // Bloque l'ouverture en desktop
+        event.stopPropagation();
         mobileNav.classList.add('open');
         openButton.classList.remove("visible");
         closeButton.classList.add("visible");
@@ -40,5 +41,23 @@ document.addEventListener('DOMContentLoaded', function () {
             closeButton.classList.remove("visible");
             openButton.classList.add("visible");
         });
+    });
+
+    document.addEventListener('click', function (event) {
+        if (document.documentElement.clientWidth > 576) return; // Empêche toute interaction en desktop
+        if (!mobileNav.contains(event.target) && !openButton.contains(event.target)) {
+            mobileNav.classList.remove('open');
+            closeButton.classList.remove("visible");
+            openButton.classList.add("visible");
+        }
+    });
+
+    menuList.addEventListener('click', function (event) {
+        if (document.documentElement.clientWidth > 576) return;
+        if (event.target === menuList) {
+            mobileNav.classList.remove('open');
+            closeButton.classList.remove("visible");
+            openButton.classList.add("visible");
+        }
     });
 });

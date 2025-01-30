@@ -4,6 +4,7 @@ function mon_theme_enqueue_assets() {
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome-free-6.7.1-web/css/all.css');
 
     wp_enqueue_script('menu_mobile', get_stylesheet_directory_uri() . '/js/menu_mobile.js', array(), null, true);
+    wp_enqueue_script('toggle_projet', get_stylesheet_directory_uri() . '/js/toggle_projet.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'mon_theme_enqueue_assets');
 
