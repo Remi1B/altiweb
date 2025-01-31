@@ -1,5 +1,5 @@
 .swiper {
-    height: 50vh;
+    height: 80vh;
     width: 95%;
     padding: 20px 0;
     &-slide {
@@ -45,6 +45,10 @@
             min-height: 60px;
             margin: auto;
             @include flex-center();
+            @media (max-width : $mobile) {
+                font-size: 14px;
+                min-height: 100px;
+            }
         }
     }
 }

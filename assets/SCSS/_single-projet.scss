@@ -46,6 +46,72 @@
         display: flex;
         justify-content: space-around;
     }
+    &_related {
+        @include flex-center(flex,row,space-between,end);
+        width: 100%;
+        height: 150px;
+        position: relative;
+        &-left {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            z-index: 10;
+            left: 10%;
+            top: 0;
+            @include transition(all, 500ms);
+            & img {
+                object-fit: contain;
+                max-height: 100%;
+            }
+        }
+        &-right {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            z-index: 10;
+            right: 10%;
+            top: 0;
+            @include transition(all, 500ms);
+            & img {
+                object-fit: contain;
+                max-height: 100%;
+            }
+        }
+        &-previous{
+            display: inline-block;
+            align-content: end;
+            padding-right: $spacing-large;
+            & a i {
+                font-size: 3em;
+            }
+            & .arrow_left{
+                @include transition();
+                &:hover {
+                    transform: scale(2);
+                }
+            }
+        } 
+        &-next {
+            display: inline-block;
+            align-content: end;
+            & a i {
+                font-size: 3em;
+            }
+            & .arrow_right{
+                @include transition();
+                &:hover {
+                    transform: scale(2);
+                }
+            }
+        }
+        &-previous:hover &-left,
+        &-next:hover &-right {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
 
 .toggle{

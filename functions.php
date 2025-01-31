@@ -38,3 +38,5 @@ require_once get_template_directory() . '/includes/register_cpt.php';
 require_once get_template_directory() . '/includes/acf_fields.php';
 
 require_once get_template_directory() . '/includes/custom_footer_socials.php';
+
+require_once get_template_directory() . '/includes/function_post-loop.php';

@@ -156,13 +156,13 @@
   z-index: 999;
 }
 .mobile_nav {
-  position: absolute;
+  position: fixed;
+  right: -100vw;
   width: 100vw;
   height: 100vh;
   background-color: #006648;
   z-index: 998;
-  top: -28px;
-  transform: translateX(100%);
+  top: 0;
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-size: 44px;
@@ -171,14 +171,14 @@
   font-style: inherit;
 }
 .mobile_nav.open {
-  transform: translateX(0);
+  right: 0;
 }
 .mobile_nav ul {
   list-style: none;
   text-align: center;
   padding: 0;
   width: 100%;
-  height: 80%;
+  height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -399,6 +399,74 @@
   display: flex;
   justify-content: space-around;
 }
+.post_related {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+.post_related-left {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  left: 10%;
+  top: 0;
+  transition: all 500ms ease;
+}
+.post_related-left img {
+  object-fit: contain;
+  max-height: 100%;
+}
+.post_related-right {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  right: 10%;
+  top: 0;
+  transition: all 500ms ease;
+}
+.post_related-right img {
+  object-fit: contain;
+  max-height: 100%;
+}
+.post_related-previous {
+  display: inline-block;
+  align-content: end;
+  padding-right: 50px;
+}
+.post_related-previous a i {
+  font-size: 3em;
+}
+.post_related-previous .arrow_left {
+  transition: all 0.3s ease;
+}
+.post_related-previous .arrow_left:hover {
+  transform: scale(2);
+}
+.post_related-next {
+  display: inline-block;
+  align-content: end;
+}
+.post_related-next a i {
+  font-size: 3em;
+}
+.post_related-next .arrow_right {
+  transition: all 0.3s ease;
+}
+.post_related-next .arrow_right:hover {
+  transform: scale(2);
+}
+.post_related-previous:hover .post_related-left, .post_related-next:hover .post_related-right {
+  opacity: 1;
+  visibility: visible;
+}
 
 .toggle-content {
   transform: scaleY(0);
@@ -456,7 +524,7 @@
 }
 
 .swiper {
-  height: 50vh;
+  height: 80vh;
   width: 95%;
   padding: 20px 0;
 }
@@ -510,9 +578,22 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 576px) {
+  .project-card a h2 {
+    font-size: 14px;
+    min-height: 100px;
+  }
+}
 
 body {
   overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
 }
 
 a {
