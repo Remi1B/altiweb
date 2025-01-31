@@ -20,8 +20,6 @@
             }
 
             & li {
-                width: 69px;
-                height: 24px;
                 white-space: nowrap;
                 padding: 0 $spacing-medium;
                 @media (min-width : $mobile) and (max-width : $tablette) {
@@ -74,6 +72,7 @@
         }
         & ul {
             list-style: none;
+            text-align: center;
             padding: 0;
             width: 100%;
             height: 80%;

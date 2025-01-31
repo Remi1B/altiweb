@@ -18,19 +18,11 @@
         @media (max-width : $tablette) {
             max-width: 100%;
             display: flex;
-        }
-        @media (max-width : $mobile) {
             flex-direction: column;
         }
         & img {
             max-width: 100%;
             height: auto;
-            @media (max-width : $tablette) {
-                max-width: 50%;
-            }
-            @media (max-width : $mobile) {
-                max-width: 100%;
-            }
         }
     }
     &_field {
@@ -39,6 +31,7 @@
             width: 100%;
         }
         & h2 {
+            color: $green-dark-color;
             @media (max-width : $tablette) {
                 text-align: center;
             }

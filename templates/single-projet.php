@@ -1,7 +1,8 @@
 <?php
 /*
 Template Name: projet
-*/ 
+Template Post Type: page
+*/
 get_template_part( 'template_parts/header' ); ?>
 
 <main id="main-content">
@@ -10,6 +11,9 @@ get_template_part( 'template_parts/header' ); ?>
         while (have_posts()) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class('post_article'); ?>>
                 <div class="post_infos">
+                    <div class="elementor-content">
+                        <?php the_content(); ?>
+                    </div>
                     <h1><?php the_title(); ?></h1>
                     <div class="post_description">
                     <?php if (get_field('image_1')): 

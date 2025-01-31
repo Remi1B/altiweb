@@ -3,8 +3,38 @@
 @import 'fonts';
 @import 'header';
 @import 'footer';
+@import 'modale_contact';
 @import 'single-projet';
+@import 'carrousel';
 
 body {
     overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: $gold-color;
+    &:hover {
+        font-weight: bold;
+    }
+}
+
+h1 {
+    font-size: 32px;
+    color: $green-light-color;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    margin: 20px 0px 20px 0px;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 24px;
+    color: $green-light-color;
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Montserrat';
 }
