@@ -2,7 +2,10 @@
 function mon_theme_enqueue_assets() {
     wp_enqueue_style('mon-theme-style', get_template_directory_uri() . '/assets/style.css');
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome-free-6.7.1-web/css/all.css');
-
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), null, true);
+    wp_enqueue_script('carrousel_swiper', get_stylesheet_directory_uri() . '/js/carrousel_swiper.js', array('swiper-js'), null, true);
+    wp_enqueue_script('modale_contact', get_stylesheet_directory_uri() . '/js/modale_contact.js', array(), null, true);
     wp_enqueue_script('menu_mobile', get_stylesheet_directory_uri() . '/js/menu_mobile.js', array(), null, true);
     wp_enqueue_script('toggle_projet', get_stylesheet_directory_uri() . '/js/toggle_projet.js', array(), null, true);
 }
