@@ -16,6 +16,8 @@
             @include flex-center(flex, row, flex-start, center);
             @include text-style(uppercase, 16px);
             @media (min-width : $mobile) and (max-width : $tablette) {
+                flex-direction: column;
+                gap: 20px;
                 font-size: $font-size-xsmall;
             }
 

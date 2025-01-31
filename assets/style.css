@@ -116,6 +116,8 @@
 }
 @media (min-width: 576px) and (max-width: 768px) {
   .header_nav ul {
+    flex-direction: column;
+    gap: 20px;
     font-size: 12px;
   }
 }
